@@ -2,7 +2,7 @@
   <img src="https://github.com/mojtabapaso/Design-Pattern-Persian/blob/main/img/Creational/prototype-mini.png" height="150px" />
 </p>
 
-# الگو طراحی :  Prototype
+# الگو طراحی :  Prototype 🐑
 
 # ✍️ توضیحات 
 توضیح بلند

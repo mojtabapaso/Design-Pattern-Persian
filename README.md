@@ -18,9 +18,10 @@
 - نباید الگوهای طراحی را بدون توجه به محیط و فریمورک پروژه، اعمال کرد.
 - نباید الگوهای طراحی را به صورت اضافی و بی مورد به پروژه اضافه کرد و باید از مصرف بیش از حد آنها خودداری کرد.
 
-تا به حال ۲۳ الگو طراحی اصلی وجود دارد که به سه دسته تقسیم میشوند.
+تا به حال ۲۳ الگو طراحی اصلی وجود دارد که به سه دسته تقسیم میشوند:
 
 [**Creational**](creational.md)  / [**Structural**](structural.md)  / [**Behavioral**](behavioral.md)
+
 در جدول زیر نوع و دسته بندی الگو های طراحی معروف آمده است :
 
 |[Creational Design Patterns](creational.md)|[Structural Design Patterns](structural.md)|[Behavioral Design Patterns](behavioral.md)|

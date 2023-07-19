@@ -28,11 +28,11 @@
 |:-|:-|:-|
 |[Simple Factory](Creational/simple_factory.md)|[Adapter](Structural/adapter.md)|[Chain of Responsibility](Behavioral/chain_of_responsibility.md)|
 |[Factory Method](Creational/factory_method.md)|[Bridge](Structural/bridge.md)|[Command](Behavioral/command.md)|
-|[Abstract Factory](#-abstract-factory)|[Composite](#-composite)|[Iterator](#-iterator)|
-|[Builder](Creational/builder.md)|[Decorator](Structural/decorator.md)|[Mediator](#-mediator)|
-|[Prototype](#-prototype)|[Facade](#-facade)|[Memento](#-memento)|
-|[Singleton](Creational/singleton.md)|[Flyweight](#-flyweight)|[Observer](#-observer)|
-||[Proxy](#-proxy)|[Visitor](#-visitor)|
-|||[Strategy](#-strategy)|
-|||[State](#-state)|
-|||[Template Method](#-template-method)|
+|[Abstract Factory](Creational/abstract_factory.md)|[Composite](Structural/composite.md)|[Iterator](Behavioral/iterator.md)|
+|[Builder](Creational/builder.md)|[Decorator](Structural/decorator.md)|[Mediator](Behavioral/mediator.md)|
+|[Prototype](Creational/prototype.md)|[Facade](Structural/facade.md)|[Memento](Behavioral/memento.md)|
+|[Singleton](Creational/singleton.md)|[Flyweight](Structural/flyweight.md)|[Observer](Behavioral/observer.md)|
+||[Proxy](Structural/proxy.md)|[Visitor](Behavioral/visitor.md)|
+|||[Strategy](Behavioral/strategy.md)|
+|||[State](Behavioral/state.md)|
+|||[Template Method](Behavioral/template_method.md)|

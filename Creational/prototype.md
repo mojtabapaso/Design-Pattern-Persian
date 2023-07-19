@@ -32,24 +32,34 @@ Python 🐍
 import copy
 
 class Prototype:
-    def clone(self):
-        pass
 
-class Person(Prototype):
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+  def __init__(self):
+    self._objects = {}
 
-    def clone(self):
-        return copy.copy(self)
+  def register(self, name, obj):
+    self._objects[name] = obj
 
-# Create a prototype person
-proto_person = Person("John", 30)
+  def unregister(self, name):
+    del self._objects[name]
 
-# Create a new person instance using the prototype
-new_person = proto_person.clone()
+  def clone(self, name, **attr):
+    obj = copy.deepcopy(self._objects.get(name))
+    obj.__dict__.update(attr)
+    return obj
 
-# Display the information for the new person
-print("Name:", new_person.name)
-print("Age:", new_person.age)
+class Car:
+  def __init__(self):
+    self.name = "Unknown"
+  def __str__(self):
+    return self.name
+
+prototype = Prototype()
+c1 = Car()
+c1.name = "Ford"
+prototype.register('ford', c1)
+
+c2 = prototype.clone('ford', name="Ferrari")
+
+print(c1) # Ford
+print(c2) # Ferrari
 ```

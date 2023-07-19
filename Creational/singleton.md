@@ -27,19 +27,23 @@ Python 🐍
 
 
 ```python
-class MySingleton:
+class Singleton:
     _instance = None
-  
+
     def __new__(cls):
         if cls._instance is None:
-            cls._instance = super().__new__(cls)
+            cls._instance = super(Singleton, cls).__new__(cls)
         return cls._instance
 
+# Usage:
 
-class Singleton(metaclass=SingletonMeta):
-    def some_business_logic(self):
-     ...
+s1 = Singleton()
+print(s1)
 
+s2 = Singleton() 
+print(s2)
 
+# s1 and s2 point to the same instance
+print(s1 is s2) # True
 
 ```

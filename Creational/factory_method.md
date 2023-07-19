@@ -33,5 +33,53 @@ Python 🐍
 
 
 ```python
-print("Hello Design Pattern ")
+from abc import ABC, abstractmethod
+
+# Define the Product interface
+class Product(ABC):
+    @abstractmethod
+    def use(self):
+        pass
+
+# Define the Concrete Products
+class ConcreteProductA(Product):
+    def use(self):
+        return "Using Concrete Product A"
+
+class ConcreteProductB(Product):
+    def use(self):
+        return "Using Concrete Product B"
+
+# Define the Creator interface
+class Creator(ABC):
+    @abstractmethod
+    def factory_method(self):
+        pass
+
+    def some_operation(self):
+        product = self.factory_method()
+        result = f"Creator: The same creator's code has just worked with {product.use()}"
+        return result
+
+# Define the Concrete Creators
+class ConcreteCreatorA(Creator):
+    def factory_method(self):
+        return ConcreteProductA()
+
+class ConcreteCreatorB(Creator):
+    def factory_method(self):
+        return ConcreteProductB()
+
+# Client code
+def client_code(creator: Creator) -> None:
+    print(creator.some_operation())
+
+if __name__ == "__main__":
+    print("Client: Testing code with the ConcreteCreatorA")
+    client_code(ConcreteCreatorA())
+
+    print("\n")
+
+    print("Client: Testing code with the ConcreteCreatorB")
+    client_code(ConcreteCreatorB())
 ```

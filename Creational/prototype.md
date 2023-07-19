@@ -29,5 +29,27 @@ Python 🐍
 
 
 ```python
-print("Hello Design Pattern ")
+import copy
+
+class Prototype:
+    def clone(self):
+        pass
+
+class Person(Prototype):
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def clone(self):
+        return copy.copy(self)
+
+# Create a prototype person
+proto_person = Person("John", 30)
+
+# Create a new person instance using the prototype
+new_person = proto_person.clone()
+
+# Display the information for the new person
+print("Name:", new_person.name)
+print("Age:", new_person.age)
 ```

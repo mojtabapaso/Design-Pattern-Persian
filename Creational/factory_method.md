@@ -33,53 +33,43 @@ Python 🐍
 
 
 ```python
-from abc import ABC, abstractmethod
 
-# Define the Product interface
-class Product(ABC):
-    @abstractmethod
-    def use(self):
-        pass
+class Vehicle:
+    def __init__(self):
+        self.num_wheels = None
 
-# Define the Concrete Products
-class ConcreteProductA(Product):
-    def use(self):
-        return "Using Concrete Product A"
+    def drive(self):
+        raise NotImplementedError
 
-class ConcreteProductB(Product):
-    def use(self):
-        return "Using Concrete Product B"
+class Car(Vehicle):
+    def __init__(self):
+        self.num_wheels = 4
+    
+    def drive(self):
+        print("Driving on 4 wheels")
 
-# Define the Creator interface
-class Creator(ABC):
-    @abstractmethod
-    def factory_method(self):
-        pass
+class Bike(Vehicle):
+    def __init__(self):
+        self.num_wheels = 2
 
-    def some_operation(self):
-        product = self.factory_method()
-        result = f"Creator: The same creator's code has just worked with {product.use()}"
-        return result
+    def drive(self):
+        print("Driving on 2 wheels")
 
-# Define the Concrete Creators
-class ConcreteCreatorA(Creator):
-    def factory_method(self):
-        return ConcreteProductA()
+class VehicleFactory:
+    def create_vehicle(self, vehicle_type):
+        if vehicle_type == "car":
+            return Car()
+        elif vehicle_type == "bike":
+            return Bike()
+        else:
+            raise ValueError(f"Unsupported vehicle type: {vehicle_type}")
 
-class ConcreteCreatorB(Creator):
-    def factory_method(self):
-        return ConcreteProductB()
+# Usage:
+factory = VehicleFactory()
+car = factory.create_vehicle("car")
+car.drive() # Prints "Driving on 4 wheels"
 
-# Client code
-def client_code(creator: Creator) -> None:
-    print(creator.some_operation())
-
-if __name__ == "__main__":
-    print("Client: Testing code with the ConcreteCreatorA")
-    client_code(ConcreteCreatorA())
-
-    print("\n")
-
-    print("Client: Testing code with the ConcreteCreatorB")
-    client_code(ConcreteCreatorB())
+bike = factory.create_vehicle("bike") 
+bike.drive() # Prints "Driving on 2 wheels"
+ 
 ```

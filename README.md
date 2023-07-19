@@ -19,8 +19,8 @@
 - نباید الگوهای طراحی را به صورت اضافی و بی مورد به پروژه اضافه کرد و باید از مصرف بیش از حد آنها خودداری کرد.
 
 تا به حال ۲۳ الگو طراحی اصلی وجود دارد که به سه دسته تقسیم میشوند.
-`Creational` `Structural` `Behavioral`
 
+[**Creational Design Patterns**](creational.md) [**Structural Design Patterns**](structural.md) [**Behavioral Design Patterns**](behavioral.md)
 
 
 |[Creational Design Patterns](creational.md)|[Structural Design Patterns](structural.md)|[Behavioral Design Patterns](behavioral.md)|

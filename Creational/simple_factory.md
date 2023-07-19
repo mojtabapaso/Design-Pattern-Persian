@@ -22,7 +22,7 @@ Python 🐍
 
 
 ```python
-class Animal:
+class Animal(object):
     def speak(self):
         pass
 
@@ -34,23 +34,20 @@ class Cat(Animal):
     def speak(self):
         return "Meow!"
 
-class AnimalFactory:
-    def create_animal(self, animal_type):
-        if animal_type == "dog":
+class AnimalFactory(object):
+    def create_animal(self, type):
+        if type == "Dog":
             return Dog()
-        elif animal_type == "cat":
+        elif type == "Cat":
             return Cat()
         else:
-            raise ValueError("Invalid animal type")
+            raise ValueError("Invalid type.")
 
-# Create an AnimalFactory instance
-animal_factory = AnimalFactory()
+# Client code
+factory = AnimalFactory()
+animal = factory.create_animal("Dog")
+print(animal.speak())  # Output: Woof!
 
-# Create a dog and a cat using the factory
-dog = animal_factory.create_animal("dog")
-cat = animal_factory.create_animal("cat")
-
-# Make the dog and cat speak
-print(dog.speak())
-print(cat.speak())
+animal = factory.create_animal("Cat")
+print(animal.speak())  # Output: Meow!
 ```

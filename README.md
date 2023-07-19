@@ -31,7 +31,7 @@
 |[Abstract Factory](#-abstract-factory)|[Composite](#-composite)|[Iterator](#-iterator)|
 |[Builder](#-builder)|[Decorator](#-decorator)|[Mediator](#-mediator)|
 |[Prototype](#-prototype)|[Facade](#-facade)|[Memento](#-memento)|
-|[Singleton](#-singleton)|[Flyweight](#-flyweight)|[Observer](#-observer)|
+|[Singleton](Creational/singleton.md)|[Flyweight](#-flyweight)|[Observer](#-observer)|
 ||[Proxy](#-proxy)|[Visitor](#-visitor)|
 |||[Strategy](#-strategy)|
 |||[State](#-state)|

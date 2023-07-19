@@ -24,12 +24,12 @@
 
 
 
-|[Creational Design Patterns](#creational-design-patterns)|[Structural Design Patterns](#structural-design-patterns)|[Behavioral Design Patterns](#behavioral-design-patterns)|
+|[Creational Design Patterns](creational.md)|[Structural Design Patterns](structural.md)|[Behavioral Design Patterns](behavioral.md)|
 |:-|:-|:-|
-|[Simple Factory](#-simple-factory)|[Adapter](#-adapter)|[Chain of Responsibility](#-chain-of-responsibility)|
-|[Factory Method](#-factory-method)|[Bridge](#-bridge)|[Command](#-command)|
+|[Simple Factory](Creational/simple_factory.md)|[Adapter](Structural/adapter.md)|[Chain of Responsibility](Behavioral/chain_of_responsibility.md)|
+|[Factory Method](Creational/factory_method.md)|[Bridge](Structural/bridge.md)|[Command](Behavioral/command.md)|
 |[Abstract Factory](#-abstract-factory)|[Composite](#-composite)|[Iterator](#-iterator)|
-|[Builder](#-builder)|[Decorator](#-decorator)|[Mediator](#-mediator)|
+|[Builder](Creational/builder.md)|[Decorator](Structural/decorator.md)|[Mediator](#-mediator)|
 |[Prototype](#-prototype)|[Facade](#-facade)|[Memento](#-memento)|
 |[Singleton](Creational/singleton.md)|[Flyweight](#-flyweight)|[Observer](#-observer)|
 ||[Proxy](#-proxy)|[Visitor](#-visitor)|

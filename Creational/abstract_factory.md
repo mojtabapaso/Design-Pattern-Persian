@@ -28,5 +28,113 @@ Python 🐍
 
 
 ```python
-print("Hello Design Pattern ")
+from abc import ABC, abstractmethod
+
+class AbstractFactory(ABC):
+    """
+    The Abstract Factory interface declares a set of methods that return
+    different abstract products. These products are called a family and are
+    related by a high-level theme or concept. Products of one family are usually
+    able to collaborate among themselves. The Abstract Factory pattern separates
+    product construction code from the code that actually uses the products.
+    """
+    
+    @abstractmethod
+    def create_product_a(self):
+        pass
+
+    @abstractmethod    
+    def create_product_b(self):
+        pass
+    
+class ConcreteFactory1(AbstractFactory):
+    """
+    Concrete Factories produce a family of products that belong to a single
+    variant. The factory guarantees that resulting products are compatible. Note
+    that signatures of the Concrete Factory's methods return an abstract product.
+    """
+
+    def create_product_a(self):
+        return ConcreteProductA1()
+
+    def create_product_b(self):
+        return ConcreteProductB1()
+        
+class ConcreteFactory2(AbstractFactory):
+    """
+    Each Concrete Factory has a corresponding product variant.
+    """
+
+    def create_product_a(self):
+        return ConcreteProductA2()
+
+    def create_product_b(self):
+        return ConcreteProductB2()
+
+class AbstractProductA(ABC):
+    """
+    Each distinct product of a product family should have a base interface. All
+    variants of the product must implement this interface.
+    """
+
+    @abstractmethod
+    def useful_function_a(self):
+        pass
+
+"""
+Concrete Products are created by corresponding Concrete Factories.
+"""
+class ConcreteProductA1(AbstractProductA):
+    def useful_function_a(self):
+        return "The result of the product A1."
+
+class ConcreteProductA2(AbstractProductA):
+    def useful_function_a(self):
+        return "The result of the product A2."
+        
+class AbstractProductB(ABC):
+    """
+    Here's the the base interface of another product. All products can interact
+    with each other, but proper interaction is possible only between products of
+    the same concrete variant.
+    """
+    @abstractmethod
+    def useful_function_b(self):
+        pass
+    
+"""
+Concrete Products are created by corresponding Concrete Factories.
+"""
+class ConcreteProductB1(AbstractProductB):
+    def useful_function_b(self):
+        return "The result of the product B1."
+    
+class ConcreteProductB2(AbstractProductB):
+    def useful_function_b(self):
+        return "The result of the product B2."
+
+def client_code(factory):
+    """
+    The client code works with factories and products only through abstract
+    types: AbstractFactory and AbstractProduct. This lets you pass any factory or
+    product subclass to the client code without breaking it.
+    """
+    product_a = factory.create_product_a()
+    product_b = factory.create_product_b()
+
+    print(f"{product_b.useful_function_b()}")
+    print(f"{product_a.useful_function_a()}")
+
+
+if __name__ == "__main__":
+    """
+    The client code can work with any concrete factory class.
+    """
+    print("Client: Testing client code with first factory type:")
+    client_code(ConcreteFactory1())
+
+    print("\n")
+
+    print("Client: Testing same client code with second factory type:")
+    client_code(ConcreteFactory2())
 ```

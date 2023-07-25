@@ -22,5 +22,29 @@ Python 🐍
 
 
 ```python
-print("Hello Design Pattern ")
+# The old interface
+class Old Calculator:
+    def operations(self, txt):
+        return "Here is the result: " + str(eval(txt))
+
+# The new interface  
+class NewCalculator:
+    def execute(self, expression):
+        return expression.calculate()
+
+# The adapter class
+class CalculatorAdapter(NewCalculator):
+    def __init__(self, old_calculator):
+        self.old_calculator = old_calculator
+
+    def execute(self, expression):
+        result = self.old_calculator.operations(expression)
+        return result
+
+# Usage
+old_calculator = OldCalculator()
+new_calculator = CalculatorAdapter(old_calculator)
+
+print(new_calculator.execute("1 + 2"))
+# Prints "Here is the result: 3"
 ```

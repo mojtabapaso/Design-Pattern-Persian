@@ -26,6 +26,50 @@ Python 🐍
 
 
 ```python
-print("Hello Design Pattern ")
+from abc import ABC, abstractmethod
+
+class Coffee(ABC):
+    @abstractmethod
+    def get_cost(self):
+        pass
+    
+    @abstractmethod    
+    def get_ingredients(self):
+        pass
+
+class SimpleCoffee(Coffee):
+    def get_cost(self):
+        return 1.0
+    
+    def get_ingredients(self):
+        return 'Coffee'
+
+class CoffeeDecorator(Coffee):
+    def __init__(self, decorated_coffee):
+        self.decorated_coffee = decorated_coffee
+
+    def get_cost(self):
+        return self.decorated_coffee.get_cost()
+
+    def get_ingredients(self):
+        return self.decorated_coffee.get_ingredients()
+
+class WithMilk(CoffeeDecorator):
+    def __init__(self, decorated_coffee):
+        CoffeeDecorator.__init__(self, decorated_coffee)
+
+    def get_cost(self):
+        return self.decorated_coffee.get_cost() + 0.5
+    
+    def get_ingredients(self):
+        return self.decorated_coffee.get_ingredients() + ', Milk'
+
+simple_coffee = SimpleCoffee()
+print(simple_coffee.get_cost())
+print(simple_coffee.get_ingredients())
+
+coffee_with_milk = WithMilk(simple_coffee)
+print(coffee_with_milk.get_cost())
+print(coffee_with_milk.get_ingredients())
 ```
 

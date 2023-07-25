@@ -20,7 +20,7 @@
 
 تا به حال ۲۳ الگو طراحی اصلی وجود دارد که به سه دسته تقسیم میشوند:
 
-[**Creational**](creational.md)  / [**Structural**](structural.md)  / [**Behavioral**](behavioral.md)
+[**Creational**](creational.md) **تکوینی** / [**Structural**](structural.md) **ساختاری** / [**Behavioral**](behavioral.md) **رفتاری**
 
 در جدول زیر نوع و دسته بندی الگو های طراحی معروف آمده است :
 
